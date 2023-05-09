@@ -17,7 +17,7 @@ void main() {
   runApp(MaterialApp(
     routes: {
       /* general links */
-      'landing': (context) => const Landing(),
+      '/': (context) => const Landing(),
       'login': (context) => const Login(),
       'reg': (context) => const Register(),
       'profile': (context) => const Profile(),

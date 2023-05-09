@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
@@ -11,6 +12,8 @@ class RestaurantResults extends StatefulWidget {
 class _RestaurantResultsState extends State<RestaurantResults> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Scaffold(
+      body: Center(child: Text('restaurant results'),),
+    );
   }
 }
