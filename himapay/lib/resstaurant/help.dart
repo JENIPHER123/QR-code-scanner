@@ -4,21 +4,21 @@ import 'package:flutter/src/widgets/placeholder.dart';
 
 import '../widgets/sidenav.dart';
 
-class SuperScann extends StatefulWidget {
-  const SuperScann({super.key});
+class RestaurantHelp extends StatefulWidget {
+  const RestaurantHelp({super.key});
 
   @override
-  State<SuperScann> createState() => _SuperScannState();
+  State<RestaurantHelp> createState() => _RestaurantHelpState();
 }
 
-class _SuperScannState extends State<SuperScann> {
+class _RestaurantHelpState extends State<RestaurantHelp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: SideNav(),
       appBar: AppBar(
         title: const Text(
-          'Supermarket Feature',
+          'Restaurant Feature',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         backgroundColor: Color.fromARGB(255, 228, 67, 120),
@@ -63,7 +63,7 @@ class _SuperScannState extends State<SuperScann> {
             ),
             ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, 'super-landing');
+                  Navigator.pushNamed(context, 'restaurant-landing');
                 },
                 child: Padding(
                   padding:

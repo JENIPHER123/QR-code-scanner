@@ -12,8 +12,30 @@ class Landing extends StatefulWidget {
 class _LandingState extends State<Landing> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: Text('general landing'),),
+    return Scaffold(
+      backgroundColor: Color.fromARGB(255, 228, 67, 120),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, 'login');
+              },
+              child: const SizedBox(
+                width: 200,
+                height: 200,
+                child: Image(
+                  image: AssetImage(
+                    'logo/logo.png',
+                  ),
+                  width: 200,
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }

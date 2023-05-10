@@ -1,38 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:himapay/widgets/sidenav.dart';
 
-import '../widgets/sidenav.dart';
-
-class LandingResaurant extends StatefulWidget {
-  const LandingResaurant({super.key});
+class Home extends StatefulWidget {
+  const Home({super.key});
 
   @override
-  State<LandingResaurant> createState() => _LandingResaurantState();
+  State<Home> createState() => _HomeState();
 }
 
-class _LandingResaurantState extends State<LandingResaurant> {
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: SideNav(),
       appBar: AppBar(
         title: Text(
-          'Restaurant Feature',
+          'Welcome to Himapay',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         backgroundColor: Color.fromARGB(255, 228, 67, 120),
       ),
-      body: Center(
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Container(
+          color: Colors.white,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 30,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children: [
                   Text(
                     'Hima',
                     style: TextStyle(
@@ -49,8 +50,34 @@ class _LandingResaurantState extends State<LandingResaurant> {
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 40,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Good Afternoon',
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 15,
+                    ),
+                  ),
+                  SizedBox(
+                    width: 7,
+                  ),
+                  Text(
+                    'Jhon Doe',
+                    style: TextStyle(
+                      color: Color.fromARGB(166, 190, 102, 171),
+                      fontSize: 15,
+                    ),
+                  ),
+                ],
+              ),
+              Image(image: AssetImage('images/qr2.gif')),
+              SizedBox(
+                height: 7,
+              ),
+              SizedBox(
+                height: 10,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -65,15 +92,15 @@ class _LandingResaurantState extends State<LandingResaurant> {
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(60))),
                         onPressed: () {
-                          Navigator.pushNamed(context, 'restaurant-scann');
+                          Navigator.pushNamed(context, 'super-landing');
                         },
-                        child: Icon(Icons.qr_code),
+                        child: Icon(Icons.sell),
                       ),
                       const SizedBox(
                         height: 10,
                       ),
                       const Text(
-                        'Scan QR-Code',
+                        'Supermarket',
                         style: TextStyle(
                             color: Colors.grey, fontWeight: FontWeight.bold),
                       )
@@ -92,15 +119,15 @@ class _LandingResaurantState extends State<LandingResaurant> {
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(60))),
                         onPressed: () {
-                          Navigator.pushNamed(context, 'restaurant-result');
+                          Navigator.pushNamed(context, 'restaurant-landing');
                         },
-                        child: Icon(Icons.receipt),
+                        child: Icon(Icons.restaurant),
                       ),
                       const SizedBox(
                         height: 10,
                       ),
                       const Text(
-                        'Transactions',
+                        'Restaurant',
                         style: TextStyle(
                             color: Colors.grey, fontWeight: FontWeight.bold),
                       )
@@ -119,15 +146,15 @@ class _LandingResaurantState extends State<LandingResaurant> {
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(60))),
                         onPressed: () {
-                          Navigator.pushNamed(context, 'restaurant-help');
+                          Navigator.pushNamed(context, 'mat-landing');
                         },
-                        child: Icon(Icons.help_center),
+                        child: Icon(Icons.car_rental),
                       ),
                       const SizedBox(
                         height: 10,
                       ),
                       const Text(
-                        'Ask For Help',
+                        'Matatu',
                         style: TextStyle(
                             color: Colors.grey, fontWeight: FontWeight.bold),
                       )
@@ -135,64 +162,60 @@ class _LandingResaurantState extends State<LandingResaurant> {
                   ),
                 ],
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: const [
-                    Card(
-                      margin: EdgeInsets.all(20),
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundColor: Colors.blue,
-                          child: Text(
-                            "M",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20),
-                          ),
-                        ),
-                        title: Text('My HimaPay Account Number'),
-                        subtitle: Text('091200093487'),
-                      ),
+              SizedBox(
+                height: 10,
+              ),
+              Card(
+                margin: EdgeInsets.all(20),
+                child: ListTile(
+                  leading: CircleAvatar(
+                    backgroundColor: Colors.blue,
+                    child: Text(
+                      "M",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
                     ),
-                    Card(
-                      margin: EdgeInsets.all(20),
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundColor: Colors.blue,
-                          child: Text(
-                            "M",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20),
-                          ),
-                        ),
-                        title: Text('My HimaPay Account Balance'),
-                        subtitle: Text('130,600 KSH'),
-                      ),
-                    ),
-                    Card(
-                      margin: EdgeInsets.all(20),
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundColor: Colors.blue,
-                          child: Text(
-                            "M",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20),
-                          ),
-                        ),
-                        title: Text('Number of transactions'),
-                        subtitle: Text('1,400 (for restaurant transactions)'),
-                      ),
-                    ),
-                  ],
+                  ),
+                  title: Text('My HimaPay Account Number'),
+                  subtitle: Text('091200093487'),
                 ),
-              )
+              ),
+              Card(
+                margin: EdgeInsets.all(20),
+                child: ListTile(
+                  leading: CircleAvatar(
+                    backgroundColor: Colors.blue,
+                    child: Text(
+                      "M",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    ),
+                  ),
+                  title: Text('My HimaPay Account Balance'),
+                  subtitle: Text('130,600 KSH'),
+                ),
+              ),
+              Card(
+                margin: EdgeInsets.all(20),
+                child: ListTile(
+                  leading: CircleAvatar(
+                    backgroundColor: Colors.blue,
+                    child: Text(
+                      "M",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    ),
+                  ),
+                  title: Text('Number of transactions'),
+                  subtitle: Text('94 (for matatu transactions)'),
+                ),
+              ),
             ],
           ),
         ),

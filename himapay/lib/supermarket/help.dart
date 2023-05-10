@@ -4,14 +4,14 @@ import 'package:flutter/src/widgets/placeholder.dart';
 
 import '../widgets/sidenav.dart';
 
-class SuperScann extends StatefulWidget {
-  const SuperScann({super.key});
+class SupperHelp extends StatefulWidget {
+  const SupperHelp({super.key});
 
   @override
-  State<SuperScann> createState() => _SuperScannState();
+  State<SupperHelp> createState() => _SupperHelpState();
 }
 
-class _SuperScannState extends State<SuperScann> {
+class _SupperHelpState extends State<SupperHelp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
